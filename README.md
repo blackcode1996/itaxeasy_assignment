@@ -14,9 +14,9 @@
 
 ## :accessibility: How to run it into your local system:
 
-- At first do git clone of this repositary.
+- At first, do a git clone of this repository.
 ```
-git clone https://github.com/blackcode1996/Impress_ai_assignment.git
+git clone https://github.com/blackcode1996/itaxeasy_assignment.git
 ```
 - After cloning it into your local system install all node modules.
 ```
@@ -26,3 +26,12 @@ npm i
 ```
 npm start
 ```
+
+## 🏛️Features:
+
+- Calculate House rent allowance
+- Calculate the Income tax of individual
+- Refer to how the works in "How is's work page"
+
+## :star2: About the Project
+ 

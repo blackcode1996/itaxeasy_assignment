@@ -66,6 +66,16 @@ npm start
 | ------ | ------ |
 | <img width="400" height="200" src="https://github.com/blackcode1996/itaxeasy_assignment/assets/110044436/0ec1ff47-7922-4a14-8749-d724e1e94ad4"  /> | <img align="center"  width="100" height="200" src="https://github.com/blackcode1996/itaxeasy_assignment/assets/110044436/a809e3e7-27e2-4cad-bdd3-8b2f9d362b9d"> |
 
+### How it works Page 
+| Desktop View | Mobile View |
+| ------ | ------ |
+| <img width="400" height="200" src="https://github.com/blackcode1996/itaxeasy_assignment/assets/110044436/80713514-66d7-4b3a-9090-1b5635959353"  /> | <img align="center"  width="100" height="200" src="https://github.com/blackcode1996/itaxeasy_assignment/assets/110044436/4b875ed3-7013-482a-a617-bf849c65d975"> |
+
+### Dark and Light mode
+| Desktop View | Mobile View |
+| ------ | ------ |
+| <img width="400" height="200" src="https://github.com/blackcode1996/itaxeasy_assignment/assets/110044436/84fefedb-7eae-4cf7-a2f0-5d71ce48febf"  /> | <img align="center"  width="100" height="200" src="https://github.com/blackcode1996/itaxeasy_assignment/assets/110044436/1baed320-5c0a-4698-9f7a-55f4a51fd5d9"> |
+
 
 
 

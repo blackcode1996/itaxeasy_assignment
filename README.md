@@ -34,4 +34,8 @@ npm start
 - Refer to how the works in "How is's work page"
 
 ## :star2: About the Project
- 
+
+ It is a tax calculator where users can calculate Income tax and House rent allowance.
+
+## :camera: Screenshots
+

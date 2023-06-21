@@ -36,6 +36,10 @@ const Incometax = () => {
   const [newtaxannual, setnewtaxannual] = useState();
   const [newtaxmonthly, setnewtaxmonthly] = useState();
 
+  const [oldannualtakehome,setoldannualtakehome]=useState()
+
+  const [newannualtakehome,setnewannualtakehome]=useState()
+
   const [clicked, setclicked] = useState(false);
 
   const bg = useColorModeValue("white", "gray.700");
@@ -54,22 +58,25 @@ const Incometax = () => {
 
     setclicked(true);
 
-    let exepmtion_80c = Math.min(150000, +inputValues.exemptions);
+    let exepmtion_80c = Math.min(150000, (+inputValues.exemptions)+(+inputValues.employeePf));
 
-    let excemptions = exepmtion_80c + +inputValues.otherExemptions;
+    console.log(exepmtion_80c)
+
+    let excemptions = exepmtion_80c + (+inputValues.otherExemptions);
+    
 
     let EMPLOYER_PF = 21600;
     let PROFESSIONAL_TAX = 2500;
     let STANDARD_EXEMPTION = 50000;
 
     let oldTaxableIncome =
-      +inputValues.annualIncome -
-      +inputValues.hraAllowance -
+      (+inputValues.annualIncome) -
+      (+inputValues.hraAllowance) -
       excemptions -
       EMPLOYER_PF -
       PROFESSIONAL_TAX -
-      STANDARD_EXEMPTION -
-      21600;
+      STANDARD_EXEMPTION
+
     setoldTaxableIncomeannual(oldTaxableIncome);
 
     let oldtaxableIncomeMonthly = Math.ceil(oldTaxableIncome / 12);
@@ -93,6 +100,13 @@ const Incometax = () => {
 
     let monthlynewtax = Math.ceil(annualnewtax / 12);
     setnewtaxmonthly(monthlynewtax);
+
+    let oldanuualtakehomeincome=Math.ceil((+inputValues.annualIncome)-21600-(+inputValues.employeePf)-2500-annualoldtax-(4/100*annualoldtax))
+    setoldannualtakehome(oldanuualtakehomeincome)
+
+    let newtaxannualtakehomeincome=Math.ceil((+inputValues.annualIncome)-21600-(+inputValues.employeePf)-2500-annualnewtax-(4/100*annualnewtax))
+    setnewannualtakehome(newtaxannualtakehomeincome)
+
   };
 
   function calculateoldTax(taxableIncome) {
@@ -301,6 +315,7 @@ const Incometax = () => {
               TaxableIncomemonthly={oldTaxableIncomemonthly}
               taxannual={oldtaxannual}
               taxmonthly={oldtaxmonthly}
+              takehomeannual={oldannualtakehome}
             />
           </Box>
           <Box w={{lg:"50%"}} m={"auto"}>
@@ -310,6 +325,7 @@ const Incometax = () => {
               TaxableIncomemonthly={newTaxableIncomemonthly}
               taxannual={newtaxannual}
               taxmonthly={newtaxmonthly}
+              takehomeannual={newannualtakehome}
             />
           </Box>
         </Box>

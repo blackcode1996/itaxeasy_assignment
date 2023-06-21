@@ -12,9 +12,10 @@ const Footer = () => {
       }}
       alignItems="center"
       justifyContent="center"
-      position="fixed" // Add fixed position
-      bottom="0" // Position at the bottom
-      left="0" // Position at the left
+      position="fixed" 
+      bottom="0" 
+      left="0" 
+      display={{base:"none"}}
     >
       <Flex
         w="full"

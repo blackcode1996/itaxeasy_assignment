@@ -6,6 +6,7 @@ const TableData = ({
   TaxableIncomemonthly,
   taxannual,
   taxmonthly,
+  takehomeannual
 }) => {
   return (
     <Box  p={"20px"}>
@@ -82,6 +83,17 @@ const TableData = ({
             </Td>
             <Td fontSize="16px" p="2">
               {taxmonthly}
+            </Td>
+          </Tr>
+          <Tr>
+            <Td fontSize="16px" p="2">
+              Take Home
+            </Td>
+            <Td fontSize="16px" p="2">
+              {takehomeannual}
+            </Td>
+            <Td fontSize="16px" p="2">
+              {Math.ceil(takehomeannual/12)}
             </Td>
           </Tr>
         </Tbody>

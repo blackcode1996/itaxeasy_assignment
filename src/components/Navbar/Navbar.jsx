@@ -86,60 +86,64 @@ const Navbar = () => {
               </Button>
 
               <Modal isOpen={isOpen} onClose={onClose} isCentered>
-        <ModalOverlay />
-        <ModalContent>
-          <ModalHeader>What do you want to Calculate?</ModalHeader>
-          <ModalCloseButton />
-          <ModalBody display={"flex"} gap={"20px"}>
-          <chakra.a
-              w="full"
-              display="flex"
-              alignItems="center"
-              justifyContent="center"
-              fontSize={"sm"}
-              fontWeight={"bold"}
-              rounded="full"
-              textColor={"blackAlpha.1000"}
-              bgGradient="linear(to-r, green.400,purple.500)"
-              _hover={{
-                bg: "blue.500",
-              }}
-              py={{
-                base: 3,
-                md: 4,
-              }}
-              cursor="pointer"
-              href="/houserent"
-            >
-              House Rent Allowance
-            </chakra.a>
-            <chakra.a
-              w="full"
-              display="flex"
-              alignItems="center"
-              justifyContent="center"
-              fontSize={"sm"}
-              fontWeight={"bold"}
-              rounded="full"
-              textColor={"blackAlpha.1000"}
-              bgGradient="linear(to-r, green.400,purple.500)"
-              _hover={{
-                bg: "blue.500",
-              }}
-              py={{
-                base: 3,
-                md: 4,
-              }}
-              cursor="pointer"
-              href="/incometax"
-            >
-              Income tax
-            </chakra.a>
-          </ModalBody>
-          <ModalFooter justifyContent={"center"} textAlign={"center"} >No need to worry its's <span style={{color:"forestgreen",marginLeft:"4px"}}>free</span></ModalFooter>
-        </ModalContent>
-      </Modal>
-
+                <ModalOverlay />
+                <ModalContent>
+                  <ModalHeader>What do you want to Calculate?</ModalHeader>
+                  <ModalCloseButton />
+                  <ModalBody display={"flex"} gap={"20px"}>
+                    <chakra.a
+                      w="full"
+                      display="flex"
+                      alignItems="center"
+                      justifyContent="center"
+                      fontSize={"sm"}
+                      fontWeight={"bold"}
+                      rounded="full"
+                      textColor={"blackAlpha.1000"}
+                      bgGradient="linear(to-r, green.400,purple.500)"
+                      _hover={{
+                        bg: "blue.500",
+                      }}
+                      py={{
+                        base: 3,
+                        md: 4,
+                      }}
+                      cursor="pointer"
+                      href="/houserent"
+                    >
+                      House Rent Allowance
+                    </chakra.a>
+                    <chakra.a
+                      w="full"
+                      display="flex"
+                      alignItems="center"
+                      justifyContent="center"
+                      fontSize={"sm"}
+                      fontWeight={"bold"}
+                      rounded="full"
+                      textColor={"blackAlpha.1000"}
+                      bgGradient="linear(to-r, green.400,purple.500)"
+                      _hover={{
+                        bg: "blue.500",
+                      }}
+                      py={{
+                        base: 3,
+                        md: 4,
+                      }}
+                      cursor="pointer"
+                      href="/incometax"
+                    >
+                      Income tax
+                    </chakra.a>
+                  </ModalBody>
+                  <ModalFooter justifyContent={"center"} textAlign={"center"}>
+                    No need to worry its's{" "}
+                    <span style={{ color: "forestgreen", marginLeft: "4px" }}>
+                      free
+                    </span>
+                  </ModalFooter>
+                </ModalContent>
+              </Modal>
             </HStack>
 
             <Button size={"lg"} onClick={toggleColorMode}>
@@ -187,9 +191,11 @@ const Navbar = () => {
                   aria-label="Close menu"
                   onClick={mobileNav.onClose}
                 />
-                <Button w="full" variant="ghost">
-                  How It Works
-                </Button>
+                <Link to="/howitworks">
+                  <Button w="full" variant="ghost">
+                    How It Works
+                  </Button>
+                </Link>
                 <Button onClick={toggleColorMode}>
                   {colorMode === "dark" ? <SunIcon /> : <MoonIcon />}
                 </Button>

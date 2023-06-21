@@ -11,12 +11,11 @@ import {
   ModalHeader,
   ModalCloseButton,
   ModalBody,
-  Text,
   ModalFooter,
-  Button,
 } from "@chakra-ui/react";
 import Lottie from "lottie-react";
 import landingPage_lottie from "../Assests/landingPage_lottie.json";
+import { Link } from "react-router-dom";
 
 const Landing = () => {
   const bg = useColorModeValue("white", "gray.800");
@@ -190,9 +189,7 @@ const Landing = () => {
                   >
                     Get started
                   </chakra.a>
-                  
                 </Box>
-                
               </Box>
             </Box>
           </Box>
@@ -225,8 +222,9 @@ const Landing = () => {
         <ModalContent>
           <ModalHeader>What do you want to Calculate?</ModalHeader>
           <ModalCloseButton />
-          <ModalBody display={"flex"} gap={"20px"}>
-            <chakra.a
+          <ModalBody display={"flex"} gap={"20px"} justifyContent={"space-around"} >
+            <Link to="/houserent">
+            <Box
               w="full"
               display="flex"
               alignItems="center"
@@ -239,27 +237,9 @@ const Landing = () => {
               _hover={{
                 bg: "blue.500",
               }}
-              py={{
-                base: 3,
-                md: 4,
-              }}
-              cursor="pointer"
-              href="/incometax"
-            >
-              Income tax
-            </chakra.a>
-            <chakra.a
-              w="full"
-              display="flex"
-              alignItems="center"
-              justifyContent="center"
-              fontSize={"sm"}
-              fontWeight={"bold"}
-              rounded="full"
-              textColor={"blackAlpha.1000"}
-              bgGradient="linear(to-r, green.400,purple.500)"
-              _hover={{
-                bg: "blue.500",
+              px={{
+                base:4,
+                md:5
               }}
               py={{
                 base: 3,
@@ -268,10 +248,44 @@ const Landing = () => {
               cursor="pointer"
               href="/houserent"
             >
-              House Rent Allowance
-            </chakra.a>
+              H.R Allowance
+            </Box>
+            </Link>
+            
+            <Link to="/incometax">
+              <Box
+                w="full"
+                display="flex"
+                alignItems="center"
+                justifyContent="center"
+                fontSize={"sm"}
+                fontWeight={"bold"}
+                rounded="full"
+                textColor={"blackAlpha.1000"}
+                bgGradient="linear(to-r, green.400,purple.500)"
+                _hover={{
+                  bg: "blue.500",
+                }}
+                px={{
+                  base:4,
+                  md:5
+                }}
+                py={{
+                  base: 3,
+                  md: 4,
+                }}
+                cursor="pointer"
+              >
+                Income tax
+              </Box>
+            </Link>
           </ModalBody>
-          <ModalFooter justifyContent={"center"} textAlign={"center"} >No need to worry its's <span style={{color:"forestgreen",marginLeft:"4px"}}>free</span></ModalFooter>
+          <ModalFooter justifyContent={"center"} textAlign={"center"}>
+            No need to worry its's{" "}
+            <span style={{ color: "forestgreen", marginLeft: "4px" }}>
+              free
+            </span>
+          </ModalFooter>
         </ModalContent>
       </Modal>
     </Box>

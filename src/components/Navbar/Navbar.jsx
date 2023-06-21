@@ -12,16 +12,27 @@ import {
   CloseButton,
   //   Icon,
   useColorMode,
+  Modal,
+  ModalOverlay,
+  ModalHeader,
+  ModalBody,
+  ModalContent,
+  ModalCloseButton,
+  ModalFooter,
 } from "@chakra-ui/react";
 import { AiOutlineMenu } from "react-icons/ai";
 import { SunIcon, MoonIcon } from "@chakra-ui/icons";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   const bg = useColorModeValue("white", "gray.700");
   const mobileNav = useDisclosure();
+
+  const { isOpen, onOpen, onClose } = useDisclosure();
+
   const { colorMode, toggleColorMode } = useColorMode();
   return (
-    <React.Fragment  >
+    <React.Fragment>
       <chakra.header
         // position={"fixed"}
         // top={0}
@@ -37,30 +48,23 @@ const Navbar = () => {
       >
         <Flex alignItems="center" justifyContent="space-between" mx="auto">
           <Flex>
-            <chakra.a
-              href="/"
-              title="Choc Home Page"
-              display="flex"
-              alignItems="center"
-            >
-              {/* <Logo /> */}
-            </chakra.a>
-            
-            <chakra.h1
-              textAlign="center"
-              fontSize="4xl"
-              ml="2"
-              display={{
-                base: "block",
-                lg: "inline",
-              }}
-              w="full"
-              bgClip="text"
-              bgGradient="linear(to-r, green.400,purple.500)"
-              fontWeight="extrabold"
-            >
-              Itaxeasy
-            </chakra.h1>
+            <Link to="/">
+              <chakra.h1
+                textAlign="center"
+                fontSize="4xl"
+                ml="2"
+                display={{
+                  base: "block",
+                  lg: "inline",
+                }}
+                w="full"
+                bgClip="text"
+                bgGradient="linear(to-r, green.400,purple.500)"
+                fontWeight="extrabold"
+              >
+                Itaxeasy
+              </chakra.h1>
+            </Link>
           </Flex>
           <HStack display="flex" alignItems="center" spacing={1}>
             <HStack
@@ -71,15 +75,76 @@ const Navbar = () => {
                 md: "inline-flex",
               }}
             >
-              <Button variant="ghost" size={"lg"}>How it works</Button>
-              <Button bg="blue.200"  size="lg">
-              Get Started
-            </Button>
-            </HStack>
-           
-            <Button size={"lg"} onClick={toggleColorMode}>
-                {colorMode === "dark" ? <SunIcon /> : <MoonIcon />}
+              <Link to="/howitworks">
+                <Button variant="ghost" size={"lg"}>
+                  How it works
+                </Button>
+              </Link>
+
+              <Button onClick={onOpen} bg="blue.200" size="lg">
+                Get Started
               </Button>
+
+              <Modal isOpen={isOpen} onClose={onClose} isCentered>
+        <ModalOverlay />
+        <ModalContent>
+          <ModalHeader>What do you want to Calculate?</ModalHeader>
+          <ModalCloseButton />
+          <ModalBody display={"flex"} gap={"20px"}>
+          <chakra.a
+              w="full"
+              display="flex"
+              alignItems="center"
+              justifyContent="center"
+              fontSize={"sm"}
+              fontWeight={"bold"}
+              rounded="full"
+              textColor={"blackAlpha.1000"}
+              bgGradient="linear(to-r, green.400,purple.500)"
+              _hover={{
+                bg: "blue.500",
+              }}
+              py={{
+                base: 3,
+                md: 4,
+              }}
+              cursor="pointer"
+              href="/houserent"
+            >
+              House Rent Allowance
+            </chakra.a>
+            <chakra.a
+              w="full"
+              display="flex"
+              alignItems="center"
+              justifyContent="center"
+              fontSize={"sm"}
+              fontWeight={"bold"}
+              rounded="full"
+              textColor={"blackAlpha.1000"}
+              bgGradient="linear(to-r, green.400,purple.500)"
+              _hover={{
+                bg: "blue.500",
+              }}
+              py={{
+                base: 3,
+                md: 4,
+              }}
+              cursor="pointer"
+              href="/incometax"
+            >
+              Income tax
+            </chakra.a>
+          </ModalBody>
+          <ModalFooter justifyContent={"center"} textAlign={"center"} >No need to worry its's <span style={{color:"forestgreen",marginLeft:"4px"}}>free</span></ModalFooter>
+        </ModalContent>
+      </Modal>
+
+            </HStack>
+
+            <Button size={"lg"} onClick={toggleColorMode}>
+              {colorMode === "dark" ? <SunIcon /> : <MoonIcon />}
+            </Button>
             <Box
               display={{
                 base: "inline-flex",
@@ -129,7 +194,6 @@ const Navbar = () => {
                   {colorMode === "dark" ? <SunIcon /> : <MoonIcon />}
                 </Button>
               </VStack>
-              
             </Box>
           </HStack>
         </Flex>
